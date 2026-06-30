@@ -10,3 +10,15 @@ server:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  prometheus:
+    metrics:
+      export:
+        enabled: true

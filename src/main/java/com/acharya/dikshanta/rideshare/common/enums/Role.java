@@ -1,4 +1,4 @@
-package com.acharya.dikshanta.rideshare.user.model;
+package com.acharya.dikshanta.rideshare.common.enums;
 
 public enum Role {
     SUPER_ADMIN,

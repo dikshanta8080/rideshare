@@ -1,5 +1,7 @@
 package com.acharya.dikshanta.rideshare.user.model;
 
+import com.acharya.dikshanta.rideshare.common.enums.Gender;
+import com.acharya.dikshanta.rideshare.common.enums.Role;
 import com.acharya.dikshanta.rideshare.common.model.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -27,6 +29,20 @@ public class User extends BaseEntity {
     @Column(name = "password", nullable = false)
     private String password;
 
+    @Column(name = "age", nullable = false)
+    private String age;
+
     @Enumerated(EnumType.STRING)
+    @Column(name = "gender", nullable = false)
+    private Gender gender;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false)
     private Role role;
+
+    @OneToOne(mappedBy = "user")
+    private RiderProfile riderProfile;
+    
+    @OneToOne(mappedBy = "user")
+    private PassengerProfile passengerProfile;
 }

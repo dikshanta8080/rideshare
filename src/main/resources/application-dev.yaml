@@ -1,4 +1,8 @@
 spring:
+  security:
+    user:
+      name: root
+      password: root
   flyway:
     enabled: true
   datasource:
