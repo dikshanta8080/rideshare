@@ -1,0 +1,25 @@
+spring:
+  flyway:
+    enabled: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/rideshare
+    username: postgres
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+#  mail:
+#    port: 587
+#    username: dikshantaacharya04@gmail.com
+#    password: dikshanta
+#    host: smtp.gmail.com
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls:
+#            enable: true
