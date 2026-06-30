@@ -3,6 +3,7 @@ package com.acharya.dikshanta.rideshare.user.model;
 import com.acharya.dikshanta.rideshare.common.enums.Gender;
 import com.acharya.dikshanta.rideshare.common.enums.Role;
 import com.acharya.dikshanta.rideshare.common.model.BaseEntity;
+import com.acharya.dikshanta.rideshare.common.model.ImageMetaData;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -40,9 +41,13 @@ public class User extends BaseEntity {
     @Column(name = "role", nullable = false)
     private Role role;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private RiderProfile riderProfile;
-    
-    @OneToOne(mappedBy = "user")
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private PassengerProfile passengerProfile;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "image_metadata_id")
+    private ImageMetaData imageMetaData;
 }
