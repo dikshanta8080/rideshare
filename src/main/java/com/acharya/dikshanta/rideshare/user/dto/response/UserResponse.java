@@ -7,11 +7,10 @@ import lombok.Builder;
 @Builder
 public record UserResponse(
         Long userId,
-        Long passengerProfileId,
         String name,
         String email,
         String phoneNumber,
-        String age,
+        Integer age,
         Gender gender,
         Role role,
         String imageUrl
